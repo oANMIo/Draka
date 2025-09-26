@@ -19,19 +19,19 @@ public class CharacterController2D : MonoBehaviour
 
     void Update()
     {
-        // Пример управления: стрелки/AWSD
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅпїЅ/AWSD
         float moveX = Input.GetAxisRaw("Horizontal"); // -1..1
         float moveY = Input.GetAxisRaw("Vertical");   // -1..1
 
-        // Направление в зависимости от ввода
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         targetVelocityX = moveX * moveSpeed;
         targetVelocityY = moveY * moveSpeed;
 
-        // Ограничения маршрута
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         targetVelocityX = Mathf.Clamp(targetVelocityX, -moveSpeed, moveSpeed);
         targetVelocityY = Mathf.Clamp(targetVelocityY, -moveSpeed, moveSpeed);
 
-        // Ограничить текущую позицию по маршруту
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Vector3 pos = transform.position;
         if (horizontalRouteLimits != Vector2.zero)
             pos.x = Mathf.Clamp(pos.x, horizontalRouteLimits.x, horizontalRouteLimits.y);
@@ -42,7 +42,7 @@ public class CharacterController2D : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 currentVel = rb.velocity;
+        Vector2 currentVel = rb.linearVelocity;
         Vector2 targetVel = new Vector2(targetVelocityX, targetVelocityY);
 
         if (acceleration > 0f)
@@ -54,6 +54,6 @@ public class CharacterController2D : MonoBehaviour
             currentVel = targetVel;
         }
 
-        rb.velocity = currentVel;
+        rb.linearVelocity = currentVel;
     }
 }
