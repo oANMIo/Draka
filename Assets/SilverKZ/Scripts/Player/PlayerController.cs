@@ -6,11 +6,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _moveSpeed = 6f;
 
     [Header("Attack")] 
-    [SerializeField] private Transform _attackPoint;      // точка удара
-    [SerializeField] private float _attackRange = 0.5f;   // радиус удара
-    [SerializeField] private LayerMask _enemyLayer;       // слой врагов
-    [SerializeField] private int _attackDamage = 30;      // урон
-    [SerializeField] private float _attackRate = 2f;      // скорость атаки (удары в секунду)
+    [SerializeField] private Transform _attackPoint;
+    [SerializeField] private float _attackRange = 0.5f;
+    [SerializeField] private LayerMask _enemyLayer;
+    [SerializeField] private int _attackDamage = 30;
+    [SerializeField] private float _attackRate = 2f;
 
     private Rigidbody2D _rb;
     private Animator _animator;
@@ -70,7 +70,6 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        // ѕроверка врагов в радиусе удара
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _enemyLayer);
 
         foreach (Collider2D enemy in hitEnemies)
