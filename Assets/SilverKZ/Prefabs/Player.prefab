@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 6188409908980295906}
   - component: {fileID: 2887839732715972842}
   - component: {fileID: 7224399302283893937}
+  - component: {fileID: 1023756443469078273}
   - component: {fileID: 2722312221507725536}
   - component: {fileID: 4025256501390070952}
-  - component: {fileID: 1023756443469078273}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -165,6 +165,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!210 &1023756443469078273
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040826788995738210}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 1
 --- !u!114 &2722312221507725536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,20 +207,8 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  _attackDamage: 5
+  _attackDamage: 20
   _attackRate: 1.5
---- !u!210 &1023756443469078273
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9040826788995738210}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 1
 --- !u!1 &9140505131508992282
 GameObject:
   m_ObjectHideFlags: 0
