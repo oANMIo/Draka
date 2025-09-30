@@ -1,0 +1,1817 @@
+fileFormatVersion: 2
+guid: 8747cccfa46ad7246bb1fa4b5a5e5fbb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6323973476051731245
+    second: street_decor_0
+  - first:
+      213: 562864520907512607
+    second: street_decor_1
+  - first:
+      213: -152096193889623914
+    second: street_decor_2
+  - first:
+      213: 9014433173479764364
+    second: street_decor_3
+  - first:
+      213: -99247515941835669
+    second: street_decor_4
+  - first:
+      213: -2090703113569026444
+    second: street_decor_5
+  - first:
+      213: -8767139084369181543
+    second: street_decor_6
+  - first:
+      213: -1012801764691632241
+    second: street_decor_7
+  - first:
+      213: 1604738878284876901
+    second: street_decor_8
+  - first:
+      213: -6858302877632835356
+    second: street_decor_9
+  - first:
+      213: -8507059459155149561
+    second: street_decor_10
+  - first:
+      213: -4250348668566549521
+    second: street_decor_11
+  - first:
+      213: -6865551162977826509
+    second: street_decor_12
+  - first:
+      213: 1091736292223044526
+    second: street_decor_13
+  - first:
+      213: -4763565292808039169
+    second: street_decor_14
+  - first:
+      213: -968377677360164493
+    second: street_decor_15
+  - first:
+      213: -9163696331618591527
+    second: street_decor_16
+  - first:
+      213: -1500518345669163297
+    second: street_decor_17
+  - first:
+      213: 7018212962489271472
+    second: street_decor_18
+  - first:
+      213: -3615979530330481549
+    second: street_decor_19
+  - first:
+      213: 3131441063593369348
+    second: street_decor_20
+  - first:
+      213: -2639147291099715947
+    second: street_decor_21
+  - first:
+      213: 6609054342097133412
+    second: street_decor_22
+  - first:
+      213: -265453977154683332
+    second: street_decor_23
+  - first:
+      213: 8885989075615802487
+    second: street_decor_24
+  - first:
+      213: 7182732022257951216
+    second: street_decor_25
+  - first:
+      213: -3203197180659143718
+    second: street_decor_26
+  - first:
+      213: -7555085775584505006
+    second: street_decor_27
+  - first:
+      213: -3295374623711708523
+    second: street_decor_28
+  - first:
+      213: 5405659913829114935
+    second: street_decor_29
+  - first:
+      213: 3683361848998281952
+    second: street_decor_30
+  - first:
+      213: 8001897120509728687
+    second: street_decor_31
+  - first:
+      213: 6064537210039345244
+    second: street_decor_32
+  - first:
+      213: -1281174363154492691
+    second: street_decor_33
+  - first:
+      213: 9082231078372658960
+    second: street_decor_34
+  - first:
+      213: -5000612136140304404
+    second: street_decor_35
+  - first:
+      213: 9047404824619098403
+    second: street_decor_36
+  - first:
+      213: -1077996827408389234
+    second: street_decor_37
+  - first:
+      213: 6718357614659948409
+    second: street_decor_38
+  - first:
+      213: -8500662278573687649
+    second: street_decor_39
+  - first:
+      213: -6021157397457680222
+    second: street_decor_40
+  - first:
+      213: 1383529646068068712
+    second: street_decor_41
+  - first:
+      213: 5217558506948751629
+    second: street_decor_42
+  - first:
+      213: 6973366437387477840
+    second: street_decor_43
+  - first:
+      213: 5662381426848496739
+    second: street_decor_44
+  - first:
+      213: 5437020816287772719
+    second: street_decor_45
+  - first:
+      213: 7300243127380946472
+    second: street_decor_46
+  - first:
+      213: 6111560779731172036
+    second: street_decor_47
+  - first:
+      213: -8797818682824772115
+    second: street_decor_48
+  - first:
+      213: 1705951027411850977
+    second: street_decor_49
+  - first:
+      213: -2065298186770598171
+    second: street_decor_50
+  - first:
+      213: -7190817963406222376
+    second: street_decor_51
+  - first:
+      213: 8900835785106161118
+    second: street_decor_52
+  - first:
+      213: 2716890696271914200
+    second: street_decor_53
+  - first:
+      213: 8770413961146727812
+    second: street_decor_54
+  - first:
+      213: -7138000263541710532
+    second: street_decor_55
+  - first:
+      213: -4064996887650946588
+    second: street_decor_56
+  - first:
+      213: 1489856569369669228
+    second: street_decor_57
+  - first:
+      213: -2831773055967460826
+    second: street_decor_58
+  - first:
+      213: 6570337087632105416
+    second: street_decor_59
+  - first:
+      213: 812693132229873179
+    second: street_decor_60
+  - first:
+      213: -1657170576248751970
+    second: street_decor_61
+  - first:
+      213: 812570203826946964
+    second: street_decor_62
+  - first:
+      213: 6420602818637269443
+    second: street_decor_63
+  - first:
+      213: -1717204181094186167
+    second: street_decor_64
+  - first:
+      213: -7023895833131906637
+    second: street_decor_65
+  - first:
+      213: -6924779464970868838
+    second: street_decor_66
+  - first:
+      213: 4453130971216510693
+    second: street_decor_67
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: street_decor_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 492
+        width: 114
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dcb1fe11abbc38a0800000000000000
+      internalID: -6323973476051731245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 559
+        width: 258
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1bdc51bc42bfc700800000000000000
+      internalID: 562864520907512607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_2
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 507
+        width: 258
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69025874155a3edf0800000000000000
+      internalID: -152096193889623914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 403
+        width: 258
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8132c4f533b91d70800000000000000
+      internalID: 9014433173479764364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_4
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 455
+        width: 258
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6c627bf8e66f9ef0800000000000000
+      internalID: -99247515941835669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_5
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 403
+        width: 230
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e3ae068945cf2e0800000000000000
+      internalID: -2090703113569026444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 351
+        width: 258
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9944bbbf37dd45680800000000000000
+      internalID: -8767139084369181543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_7
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 351
+        width: 230
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f9aab392ec1f1f0800000000000000
+      internalID: -1012801764691632241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 299
+        width: 258
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ccd6de18d254610800000000000000
+      internalID: 1604738878284876901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_9
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 307
+        width: 151
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e0d7a0aed962d0a0800000000000000
+      internalID: -6858302877632835356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_10
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 307
+        width: 77
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d3ee58e7ad0f980800000000000000
+      internalID: -8507059459155149561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_11
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 247
+        width: 258
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb498eb76ab305c0800000000000000
+      internalID: -4250348668566549521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_12
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 263
+        width: 151
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339cf6fa799a8b0a0800000000000000
+      internalID: -6865551162977826509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_13
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 258
+        width: 66
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab4b5e9f50a62f00800000000000000
+      internalID: 1091736292223044526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 218
+        width: 171
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff41cc9ca9a64edb0800000000000000
+      internalID: -4763565292808039169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_15
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 219
+        width: 150
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 371978412a1af82f0800000000000000
+      internalID: -968377677360164493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 204
+        width: 194
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dcd25cdcb204d080800000000000000
+      internalID: -9163696331618591527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_17
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 199
+        width: 194
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6ce63c3861d2be0800000000000000
+      internalID: -1500518345669163297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_18
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 185
+        width: 96
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b4073b5183b56160800000000000000
+      internalID: 7018212962489271472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_19
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 204
+        width: 194
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c519386c571ddc0800000000000000
+      internalID: -3615979530330481549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_20
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 200
+        width: 194
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40fdd866e0d157b20800000000000000
+      internalID: 3131441063593369348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_21
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 159
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5962114858ddf5bd0800000000000000
+      internalID: -2639147291099715947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_22
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 167
+        width: 75
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46fd3f968e318bb50800000000000000
+      internalID: 6609054342097133412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_23
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 147
+        width: 57
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3efa73a30be05cf0800000000000000
+      internalID: -265453977154683332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_24
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 3
+        width: 9
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 774e41afbff515b70800000000000000
+      internalID: 8885989075615802487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_25
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 171
+        width: 96
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f1228fe7b03ea360800000000000000
+      internalID: 7182732022257951216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_26
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 171
+        width: 93
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb674da225fb83d0800000000000000
+      internalID: -3203197180659143718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_27
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 19
+        width: 11
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 253dda20481f62790800000000000000
+      internalID: -7555085775584505006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_28
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 143
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ab3d74d3a7442d0800000000000000
+      internalID: -3295374623711708523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_29
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 148
+        width: 95
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7346a5c1d03c40b40800000000000000
+      internalID: 5405659913829114935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_30
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 148
+        width: 90
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2c4cc161eed1330800000000000000
+      internalID: 3683361848998281952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_31
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 43
+        width: 9
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa7143509037c0f60800000000000000
+      internalID: 8001897120509728687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_32
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 124
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50a8831670992450800000000000000
+      internalID: 6064537210039345244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_33
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 132
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2d6d464ba583ee0800000000000000
+      internalID: -1281174363154492691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_34
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 144
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f4a6acb019a0e70800000000000000
+      internalID: 9082231078372658960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_35
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 123
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef89dda1c14a9ab0800000000000000
+      internalID: -5000612136140304404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_36
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 123
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321a396b0c6de8d70800000000000000
+      internalID: 9047404824619098403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_37
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 122
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b2351d89f2a01f0800000000000000
+      internalID: -1077996827408389234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_38
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 129
+        width: 96
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97fc8d7b7a66c3d50800000000000000
+      internalID: 6718357614659948409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_39
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 135
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9c7d0232b4970a80800000000000000
+      internalID: -8500662278573687649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_40
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 135
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a8c1db9f3d807ca0800000000000000
+      internalID: -6021157397457680222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_41
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 120
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 861fb1202e8433310800000000000000
+      internalID: 1383529646068068712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_42
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 102
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d017f7971dd786840800000000000000
+      internalID: 5217558506948751629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_43
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 102
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 053ac1d04df56c060800000000000000
+      internalID: 6973366437387477840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_44
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 102
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36cf21a38e1d49e40800000000000000
+      internalID: 5662381426848496739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_45
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 96
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20bc3730ad247b40800000000000000
+      internalID: 5437020816287772719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_46
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 103
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e278d227caf4560800000000000000
+      internalID: 7300243127380946472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_47
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 110
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4caf5131620a0d450800000000000000
+      internalID: 6111560779731172036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_48
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 111
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de53fe3558ed7e580800000000000000
+      internalID: -8797818682824772115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_49
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 110
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e69811cb61cca710800000000000000
+      internalID: 1705951027411850977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_50
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 110
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e6b746dd369653e0800000000000000
+      internalID: -2065298186770598171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_51
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 110
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db9cae2925153c90800000000000000
+      internalID: -7190817963406222376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_52
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 104
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd7657ecfe168b70800000000000000
+      internalID: 8900835785106161118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_53
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 112
+        width: 33
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4e9dc81b554b520800000000000000
+      internalID: 2716890696271914200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_54
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 114
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48df64fa705c6b970800000000000000
+      internalID: 8770413961146727812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_55
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 114
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31a3fc349ab0fc90800000000000000
+      internalID: -7138000263541710532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_56
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 114
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e13f723eda3697c0800000000000000
+      internalID: -4064996887650946588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_57
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 114
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6eaf8ff7a80da410800000000000000
+      internalID: 1489856569369669228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_58
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 114
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6228982b86583b8d0800000000000000
+      internalID: -2831773055967460826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_59
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 114
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cfd2e225c68e2b50800000000000000
+      internalID: 6570337087632105416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_60
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 115
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e06f11914474b00800000000000000
+      internalID: 812693132229873179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_61
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 114
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98b676142c8009e0800000000000000
+      internalID: -1657170576248751970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_62
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 108
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4930c229b44d64b00800000000000000
+      internalID: 812570203826946964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_63
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 106
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c90fb8ee309a1950800000000000000
+      internalID: 6420602818637269443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_64
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 114
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 943c01b35e34b28e0800000000000000
+      internalID: -1717204181094186167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_65
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 103
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b983d634fb168e90800000000000000
+      internalID: -7023895833131906637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_66
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 97
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97ed7204cd36ef90800000000000000
+      internalID: -6924779464970868838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: street_decor_67
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 95
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ee76ad4603bccd30800000000000000
+      internalID: 4453130971216510693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
