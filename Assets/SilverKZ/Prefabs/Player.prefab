@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15a469f94848e840b6d8ce17d2b3afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 100
 --- !u!114 &4025256501390070952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +208,9 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  _trashLayer:
+    serializedVersion: 2
+    m_Bits: 128
   _attackDamage: 20
   _attackRate: 1.5
 --- !u!1 &9140505131508992282

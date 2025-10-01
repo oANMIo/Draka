@@ -64,17 +64,18 @@ public class EnemySpawn : MonoBehaviour
 	
 	private void SpawnEnemy()
 	{
-		bool positionX = UnityEngine.Random.Range(0, 2) == 0 ? true : false;
+		//bool positionX = UnityEngine.Random.Range(0, 2) == 0 ? true : false;
+		bool positionX = true;
 		Vector3 spawnPosition;
 		spawnPosition.y = UnityEngine.Random.Range(_minY, _maxY);
 
 		if (positionX)
 		{
-			spawnPosition = new Vector3(transform.position.x + 10, spawnPosition.y, 0);
+			spawnPosition = new Vector3(transform.position.x + 15, spawnPosition.y, 0);
 		}
 		else
 		{
-			spawnPosition = new Vector3(transform.position.x - 10, spawnPosition.y, 0);
+			spawnPosition = new Vector3(transform.position.x - 12, spawnPosition.y, 0);
 		}
 
 		Enemy enemy = Instantiate(_prefabEnemy, spawnPosition, Quaternion.identity);

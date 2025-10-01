@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _attackPoint;
     [SerializeField] private float _attackRange = 0.5f;
     [SerializeField] private LayerMask _enemyLayer;
+    [SerializeField] private LayerMask _trashLayer;
     [SerializeField] private int _attackDamage = 30;
     [SerializeField] private float _attackRate = 2f;
 
@@ -77,6 +78,16 @@ public class PlayerController : MonoBehaviour
             if (enemy != null)
             {
                 enemy.GetComponent<Enemy>().TakeDamage(_attackDamage); 
+            }
+        }
+
+        Collider2D[] hitTrash = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _trashLayer);
+
+        foreach (Collider2D trash in hitTrash)
+        {
+            if (trash != null)
+            {
+                trash.GetComponent<Trash>().TakeDamage(_attackDamage);
             }
         }
     }

@@ -172,7 +172,7 @@ public class Enemy : MonoBehaviour
         return steer;
     }
 
-    void TryAttack()
+    private void TryAttack()
     {
         if (Time.time - _lastAttackTime < _attackCooldown) 
             return;

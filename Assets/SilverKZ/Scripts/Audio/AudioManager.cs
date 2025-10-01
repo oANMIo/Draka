@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip _swing;
     [SerializeField] private AudioClip _hit;
     [SerializeField] private AudioClip _jump;
+    [SerializeField] private AudioClip _trash;
 
     private AudioSource _audioSource;
     private static AudioManager _instance = null;
@@ -18,6 +19,7 @@ public class AudioManager : MonoBehaviour
         Swing,
         Hit,
         Jump,
+        Trash
     }
 
     public static AudioManager Instance
@@ -67,6 +69,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case AudioManager.Clip.Jump:
                 currentClip = _jump;
+                break;
+            case AudioManager.Clip.Trash:
+                currentClip = _trash;
                 break;
             default:
                 currentClip = _coinPickup;
