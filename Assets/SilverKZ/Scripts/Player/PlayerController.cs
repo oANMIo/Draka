@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
         {
             if (trash != null)
             {
+                Debug.Log(trash);
                 trash.GetComponent<Trash>().TakeDamage(_attackDamage);
             }
         }

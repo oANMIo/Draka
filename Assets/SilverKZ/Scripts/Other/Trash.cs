@@ -19,7 +19,7 @@ public class Trash : MonoBehaviour
 
         AudioManager.Instance.Play(AudioManager.Clip.Trash);
         _health -= damage;
-
+        
         if (_health <= 0)
         {
             StopAllCoroutines();
