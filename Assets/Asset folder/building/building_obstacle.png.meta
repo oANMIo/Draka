@@ -1634,7 +1634,68 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      building_obstacle_0: -1602423744031995174
+      building_obstacle_1: -6222699607442431769
+      building_obstacle_10: -7057470532368857861
+      building_obstacle_11: 8287114413546694829
+      building_obstacle_12: 551607258030987256
+      building_obstacle_13: 8083499641645216749
+      building_obstacle_14: -6574014676615971619
+      building_obstacle_15: -7469501969371639418
+      building_obstacle_16: 5750541257846421826
+      building_obstacle_17: -5973134284850925695
+      building_obstacle_18: 8244623448527464205
+      building_obstacle_19: -6239151943271484083
+      building_obstacle_2: -4068933268758543589
+      building_obstacle_20: -2038157379473249742
+      building_obstacle_21: 4174186135120442976
+      building_obstacle_22: -1271111071406074405
+      building_obstacle_23: -4093440277399856314
+      building_obstacle_24: -3174653080411180194
+      building_obstacle_25: -5072917480860376507
+      building_obstacle_26: -5909820014793678975
+      building_obstacle_27: 3218947713756698358
+      building_obstacle_28: -6600928218877745584
+      building_obstacle_29: -2207444067845339421
+      building_obstacle_3: 7193180256227994075
+      building_obstacle_30: -2786742596350212325
+      building_obstacle_31: 5461245050358075688
+      building_obstacle_32: 9208083201983457760
+      building_obstacle_33: -4578481095199712630
+      building_obstacle_34: -8601966724320951729
+      building_obstacle_35: 7397823875311160443
+      building_obstacle_36: 4133213746109427991
+      building_obstacle_37: -3379682663647375066
+      building_obstacle_38: -1445747333765899765
+      building_obstacle_39: -6873054149966728136
+      building_obstacle_4: -6763056495022423481
+      building_obstacle_40: 3199213785072390652
+      building_obstacle_41: -832943857273079139
+      building_obstacle_42: -566966231156988460
+      building_obstacle_43: 5126042612437876561
+      building_obstacle_44: 6896329298454296145
+      building_obstacle_45: 4720085568947820422
+      building_obstacle_46: 6925000847085395195
+      building_obstacle_47: 5355319517355404999
+      building_obstacle_48: -4726360588592395490
+      building_obstacle_49: -9032086037238625061
+      building_obstacle_5: -4592667489981711170
+      building_obstacle_50: -7367263237501796537
+      building_obstacle_51: 5082133029082290949
+      building_obstacle_52: 4725221784660945884
+      building_obstacle_53: 8920832041362538385
+      building_obstacle_54: -4555895956588440975
+      building_obstacle_55: 3727820819784236305
+      building_obstacle_56: -6040159779496191726
+      building_obstacle_57: 7666332382767750716
+      building_obstacle_58: 4098161025289105494
+      building_obstacle_59: 8410430009004952041
+      building_obstacle_6: 411650249678681615
+      building_obstacle_60: 6419340156395386334
+      building_obstacle_7: -6679452308164412065
+      building_obstacle_8: -5009342049531166723
+      building_obstacle_9: -7171464624779231124
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

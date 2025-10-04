@@ -1509,7 +1509,63 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      building_decor_0: -4685543968354244433
+      building_decor_1: 7721850434778069643
+      building_decor_10: 625054141154454905
+      building_decor_11: -1754476005927397554
+      building_decor_12: -3617920824296151473
+      building_decor_13: -6107991695219150270
+      building_decor_14: 8331558588191899947
+      building_decor_15: 7258267375018597408
+      building_decor_16: 4587334795610988521
+      building_decor_17: -8752673399102613642
+      building_decor_18: -7092787157919402676
+      building_decor_19: -7213307550140762444
+      building_decor_2: 2059841570735742303
+      building_decor_20: -8882330149914806775
+      building_decor_21: 7858197833182879201
+      building_decor_22: -7491616388272705259
+      building_decor_23: -1375161747152465749
+      building_decor_24: 4035973749277769325
+      building_decor_25: -7276274581634412973
+      building_decor_26: -6206804747178482550
+      building_decor_27: 3445827568354221146
+      building_decor_28: 8287924158282449579
+      building_decor_29: -3563699305540406791
+      building_decor_3: -6848541831426876648
+      building_decor_30: -7132025168167523201
+      building_decor_31: 6127522324688626712
+      building_decor_32: 5497000991057441179
+      building_decor_33: -92898493111092058
+      building_decor_34: 767911933742214932
+      building_decor_35: -2461861590569462564
+      building_decor_36: -8130794345941753715
+      building_decor_37: 2784553959189621993
+      building_decor_38: -5295200653784147689
+      building_decor_39: 4826842371647834535
+      building_decor_4: -9106184891449763939
+      building_decor_40: -1585428274016725617
+      building_decor_41: 6990613425616878864
+      building_decor_42: -582947775109090744
+      building_decor_43: -7277622894129821583
+      building_decor_44: -3430184915877881402
+      building_decor_45: -3663323879017346639
+      building_decor_46: -5638919578140454732
+      building_decor_47: 8099837814489970818
+      building_decor_48: -6360235023780395555
+      building_decor_49: 8380422064565912225
+      building_decor_5: 9170854731450632587
+      building_decor_50: 1509368200816189753
+      building_decor_51: -4403255928128785356
+      building_decor_52: -8423455534849180620
+      building_decor_53: -7121970783294188625
+      building_decor_54: -3200358697073959936
+      building_decor_55: 3552189744784871467
+      building_decor_6: -5815222307194115140
+      building_decor_7: 8851177045265692510
+      building_decor_8: 6273198431578695696
+      building_decor_9: 8334741113155522420
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

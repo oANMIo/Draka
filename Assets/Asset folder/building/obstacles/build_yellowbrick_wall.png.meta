@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      build_yellowbrick_wall_0: 8812413273688794285
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
