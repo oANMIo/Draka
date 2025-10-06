@@ -1,16 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class MainMenuManager : MonoBehaviour 
 {
     [SerializeField] private GameObject menuUI;
-    [SerializeField] private GameObject Autors; 
+    [SerializeField] private GameObject Autors;
+    [SerializeField] private GameObject Settings;
 
     private bool isVideoPlaying = false;
-    private bool isAuthorsVisible = false; 
+    private bool isAuthorsVisible = false;
+    private bool isSettingsVisible = false;
 
-    [Tooltip("Саунд-эффект, который проигрывается при открытии/закрытии")]
     public AudioClip clickSound;
     public float volume = 1f;
 
@@ -18,10 +20,13 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
-        // Скрываем окно авторов при старте
         if (Autors != null)
         {
             Autors.SetActive(false);
+        }
+        if (Settings != null)
+        {
+            Settings.SetActive(false);
         }
 
         audioSource = GetComponent<AudioSource>();
@@ -35,18 +40,33 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // Если окно авторов активно, скрываем его при клике
         if (isAuthorsVisible)
         {
             PlayClickSound();
             Autors.SetActive(false);
             isAuthorsVisible = false;
         }
+
+        if (isSettingsVisible)
+        {
+            PlayClickSound();
+            Settings.SetActive(false);
+            isSettingsVisible = false;
+        }
     }
+
+    public float delayBeforeLoad = 1f; 
 
     public void PlayGame()
     {
-    SceneManager.LoadScene(1);
+        PlayClickSound();
+        StartCoroutine(LoadSceneAfterDelay(delayBeforeLoad));
+    }
+
+    private IEnumerator LoadSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(1);
     }
 
     public void Info()
@@ -65,7 +85,7 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    private void CloseInfo()
+    public void CloseInfo()
     {
         PlayClickSound();
         Autors.SetActive(false);
@@ -78,5 +98,19 @@ public class MainMenuManager : MonoBehaviour
         {
             audioSource.PlayOneShot(clickSound, volume);
         }
+    }
+
+    public void OpenSettings()
+    {
+        PlayClickSound();
+        Settings.SetActive(true);
+        isSettingsVisible = true;
+    }
+
+    public void CloseSettings()
+    {
+        PlayClickSound();
+        Settings.SetActive(false);
+        isSettingsVisible = false;
     }
 }
