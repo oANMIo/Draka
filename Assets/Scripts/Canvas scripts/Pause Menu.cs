@@ -10,14 +10,14 @@ public class PauseMenu : MonoBehaviour
 
     public bool PauseGame { get; private set; }
     public GameObject PauseGameMenu;
-    public AudioClip clickSound;
-    public float volume = 1f;
+    public GameObject Settings;
+    private bool isSettingsVisible = false;
     public GameObject Autors;
     private bool isAuthorsVisible = false;
+    public AudioClip clickSound;
+    public float volume = 1f;
     private AudioSource audioSource;
-    [SerializeField] private GameObject Settings;
-    private bool isSettingsVisible = false;
-
+   
     private void Awake()
     {
         if (Instance == null)
