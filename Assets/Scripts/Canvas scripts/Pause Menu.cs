@@ -16,8 +16,8 @@ public class PauseMenu : MonoBehaviour
     private bool isAuthorsVisible = false;
     public AudioClip clickSound;
     public float volume = 1f;
-    private AudioSource audioSource;
-   
+    [SerializeField]  private AudioSource audioSource;
+
     private void Awake()
     {
         if (Instance == null)
@@ -30,7 +30,6 @@ public class PauseMenu : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();

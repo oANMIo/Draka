@@ -16,7 +16,7 @@ public class MainMenuManager : MonoBehaviour
     public AudioClip clickSound;
     public float volume = 1f;
 
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource;
 
     private void Start()
     {
@@ -28,8 +28,6 @@ public class MainMenuManager : MonoBehaviour
         {
             Settings.SetActive(false);
         }
-
-        audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
