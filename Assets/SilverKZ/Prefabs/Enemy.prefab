@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3558388483445373244}
   m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,17 +71,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.07179642, y: 1.1820483}
+  m_Offset: {x: 0.07700348, y: 0.040986776}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.8461539, y: 2.4615386}
+    oldSize: {x: 2.4333334, y: 2.4333334}
     newSize: {x: 1.0909091, y: 1.4545455}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1079788, y: 0.1746912}
+  m_Size: {x: 0.8891449, y: 0.3310008}
   m_EdgeRadius: 0
 --- !u!50 &5068170228619382480
 Rigidbody2D:
@@ -176,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2237285443321258136, guid: b297b9886a4d8af4b8e53fcf716f5c5b, type: 3}
+  m_Sprite: {fileID: -3908406092012751444, guid: 4a8e9ac46202c8d49a0fd7c4934d5818, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -199,14 +199,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8666b81c90c8179479264c514b65ab05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnID: 0
   _health: 100
-  _type: 0
   _attackRange: 2
   _speed: 3
   _separationRadius: 6
   _maxForce: 5
   _slowingRadius: 2
   _attackCooldown: 2
+  _knockbackForce: 40
+  _knockbackDuration: 0.03
+  _hitEffectPrefab: {fileID: 7302835245389350882, guid: 09999a743a1a7354c94ac108712f4682, type: 3}
 --- !u!1 &4577065647381116436
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,17 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyType
-{
-    Idle,
-    Chase
-}
-
-public class Enemy : MonoBehaviour
+public class Enemy : ItemDamage
 {
     [SerializeField] private int _health = 100;
-    [SerializeField] private EnemyType _type;
 
     [Header("AI Movement")]
     [SerializeField] private float _attackRange = 2.0f;
@@ -21,6 +15,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _slowingRadius = 2f;
     [SerializeField] private float _attackCooldown = 1.5f;
 
+    [Header("FX Damage")]
+    [SerializeField] private float _knockbackForce = 50f;
+    [SerializeField] private float _knockbackDuration = 0.03f;
+    [SerializeField] private GameObject _hitEffectPrefab;
+
+    private bool _isKnockedBack = false;
     private Vector2 _velocity;
     private BoxCollider2D _collider;
     private Rigidbody2D _rb;
@@ -29,11 +29,9 @@ public class Enemy : MonoBehaviour
     private bool _isAlive = true;
     private float _lastAttackTime;
 
-    public static Action<int> onDeathEnemy;
-
     public bool IsChase { get;  set; }
     public Player Target { get;  set; }
-    public List<Enemy> Friends { private get; set; }
+    //public List<ItemDamage> Friends { private get; set; }
 
     private void Start()
     {
@@ -43,13 +41,13 @@ public class Enemy : MonoBehaviour
         AnimatorStateInfo state = _animator.GetCurrentAnimatorStateInfo(0);
         _animator.Play(state.fullPathHash, -1, UnityEngine.Random.Range(0f, 1f));
         _animator.speed = UnityEngine.Random.Range(0.9f, 1.1f);
-        Friends = new List<Enemy>();
+        //Friends = new List<ItemDamage>();
     }
 
     private void FixedUpdate()
     {
-        if (_isAlive == false) return;
-  
+        if (_isAlive == false || _isKnockedBack) return;
+
         Flip();
         Move();
 
@@ -57,29 +55,27 @@ public class Enemy : MonoBehaviour
         _animator.SetFloat("Speed", _velocity.sqrMagnitude);
     }
 
-    public void DeathEnemy()
-    {
-        onDeathEnemy?.Invoke(1);
-    }
-
-    public void SetTriggerDamage()
+    public void SetTriggerDamage() 
     {
         _isDamage = false;
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage, Vector2 hitDirection)
     {
-        _animator.SetBool("Damage", _isDamage);
-        //this.GetComponent<Animator>().SetBool("Damage", _isDamage);
+        if (_isKnockedBack) return;
 
         AudioManager.Instance.Play(AudioManager.Clip.Hit);
         _health -= damage;
         _isDamage = true;
 
-        if (_health <= 0)
+        SpawnHitEffect(hitDirection);
+
+        StartCoroutine(DoKnockback(hitDirection));
+
+        if (_health <= 0) 
         {
             Die();
-        }
+        } 
     }
 
     private void Die()
@@ -88,7 +84,21 @@ public class Enemy : MonoBehaviour
         _isAlive = false;
         _collider.enabled = false;
         _animator.SetBool("Die", true);
-        DeathEnemy();
+        DeathEnemy(); 
+    }
+
+    private void SpawnHitEffect(Vector2 hitDirection)
+    {
+        if (_hitEffectPrefab == null) return;
+
+        Vector3 spawnOffset = new Vector3(0, 2f, 0);
+        Vector3 spawnPos = transform.position + spawnOffset + (Vector3)(hitDirection.normalized * 0.3f);
+
+        GameObject effect = Instantiate(_hitEffectPrefab, spawnPos, Quaternion.identity);
+
+        // Разворачиваем в сторону удара (чтобы летели “в обратную”)
+        float angle = Mathf.Atan2(hitDirection.y, hitDirection.x) * Mathf.Rad2Deg;
+        effect.transform.rotation = Quaternion.Euler(0, 0, angle + 180f);
     }
 
     private void Flip()
@@ -110,14 +120,12 @@ public class Enemy : MonoBehaviour
         _velocity += (arrive + sep) * Time.deltaTime;
         //transform.position += _velocity * Time.deltaTime;
 
-        // атака если близко
         if (dist < _attackRange)
         {
             TryAttack();
             _velocity = Vector2.zero;
         }
 
-        // затухание скорости
         _velocity = Vector2.ClampMagnitude(_velocity, _speed);
 
         _rb.MovePosition(_rb.position + _velocity * Time.fixedDeltaTime);
@@ -125,10 +133,9 @@ public class Enemy : MonoBehaviour
 
     private Vector2 LateralOffset()
     {
-        // Смещение вбок от игрока (чтобы не толпились в одной точке)
         Vector2 dir = (transform.position - Target.transform.position).normalized;
         Vector2 right = Vector3.Cross(Vector2.up, dir);
-        float offset = UnityEngine.Random.Range(-1f, 1f) * 1.5f; // боковое смещение
+        float offset = UnityEngine.Random.Range(-1f, 1f) * 1.5f;
         return right * offset;
     }
 
@@ -151,6 +158,8 @@ public class Enemy : MonoBehaviour
     {
         Vector2 steer = Vector2.zero;
         int count = 0;
+
+        if (Friends.Count == 0) return steer;
 
         foreach (var other in Friends)
         {
@@ -178,10 +187,26 @@ public class Enemy : MonoBehaviour
             return;
 
         _lastAttackTime = Time.time;
-        Debug.Log($"{gameObject.name} атакует игрока!");
+        Debug.Log($"{gameObject.name} attack!");
 
-        // Тут можно включить анимацию или вызвать урон игроку
         // animator.SetTrigger("Attack");
         // player.GetComponent<PlayerHealth>().TakeDamage(damage);
+    }
+
+    private IEnumerator DoKnockback(Vector2 direction)
+    {
+        if (_isKnockedBack || _rb == null) yield break;
+
+        _isKnockedBack = true;
+
+        _rb.WakeUp();
+        _rb.linearVelocity = Vector2.zero;
+        Vector2 knockbackDir = new Vector2(Mathf.Sign(direction.x), 0f);
+        _rb.AddForce(knockbackDir * _knockbackForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(_knockbackDuration);
+
+        _rb.linearVelocity = Vector2.zero;
+        _isKnockedBack = false;
     }
 }

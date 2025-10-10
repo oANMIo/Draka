@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
+	[SerializeField] private int _spawnID = 1;
 	[SerializeField] private float _maxY = 1.0f;
 	[SerializeField] private float _minY = -4.5f;
 	[SerializeField] private int _numberOfEnemies = 2;
 	[SerializeField] private float _spawnTime = 1.0f;
 	[SerializeField] private Enemy _prefabEnemy;
+	[SerializeField] private EnemyGuard _prefabEnemyGuard;
+	[SerializeField] private Transform _spawnPointEnemyGuard;
 
 	private int _currentEnemies;
-	private int _countAliveEnemies;
+	private bool _spawnEnemyGuard;
 	private Camera _camera;
 	private Player _player;
-	private List<Enemy> _enemies = new List<Enemy>();
+	private List<ItemDamage> _enemies = new List<ItemDamage>();
 
 	public static Action onStartSpawn;
 	public static Action onAllKill;
@@ -23,30 +26,43 @@ public class EnemySpawn : MonoBehaviour
     {
 		_camera = Camera.main;
 		_currentEnemies = 0;
-		_countAliveEnemies = _numberOfEnemies;
+		_spawnEnemyGuard = false;
 	}
 
 	private void OnEnable()
 	{
-		Enemy.onDeathEnemy += UpdateCountEnemy; 
+		ItemDamage.onDeathEnemy += UpdateCountEnemy; 
 	}
 
 	private void OnDisable()
 	{
-		Enemy.onDeathEnemy -= UpdateCountEnemy;
+		ItemDamage.onDeathEnemy -= UpdateCountEnemy;
 	}
 
-	private void UpdateCountEnemy(int number)
+	private void UpdateCountEnemy(ItemDamage enemy)
     {
-		if (_currentEnemies >= _numberOfEnemies)
-		{
-			_countAliveEnemies--;
+		if (enemy.spawnID != _spawnID) return;
 
-			if (_countAliveEnemies == 0)
+		GameObject[] aliveEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+		int countAliveEnemies = -1;
+
+		foreach (GameObject item in aliveEnemies)
+        {
+			if (item.GetComponent<ItemDamage>().spawnID == _spawnID)
 			{
-				AllKill();
-				Destroy(gameObject);
+				countAliveEnemies++;
 			}
+        }
+
+		if (countAliveEnemies > 0)  
+		{
+			enemy.gameObject.tag = "Untagged";  
+		}
+		
+		if (countAliveEnemies == 0 && _currentEnemies >= _numberOfEnemies)
+		{
+			AllKill();
+			Destroy(gameObject);
 		}
 	}
 
@@ -64,41 +80,48 @@ public class EnemySpawn : MonoBehaviour
 	
 	private void SpawnEnemy()
 	{
-		//bool positionX = UnityEngine.Random.Range(0, 2) == 0 ? true : false;
-		bool positionX = true;
+        if (_prefabEnemyGuard != null && _spawnEnemyGuard == false)
+        {
+			EnemyGuard enemyGuard = Instantiate(_prefabEnemyGuard, _spawnPointEnemyGuard.position, Quaternion.identity);
+			enemyGuard.Player = _player;
+			enemyGuard.spawnID = _spawnID;
+			_enemies.Add(enemyGuard);
+			_currentEnemies++;
+			_spawnEnemyGuard = true;
+		}
+		
+		bool positionX = UnityEngine.Random.Range(0, 2) == 0 ? true : false;
+		//bool positionX = true;
 		Vector3 spawnPosition;
 		spawnPosition.y = UnityEngine.Random.Range(_minY, _maxY);
 
 		if (positionX)
 		{
-			spawnPosition = new Vector3(transform.position.x + 15, spawnPosition.y, 0);
+			spawnPosition = new Vector3(transform.position.x + 17, spawnPosition.y, 0);
 		}
 		else
 		{
-			spawnPosition = new Vector3(transform.position.x - 12, spawnPosition.y, 0);
+			spawnPosition = new Vector3(transform.position.x - 17, spawnPosition.y, 0); 
 		}
 
 		Enemy enemy = Instantiate(_prefabEnemy, spawnPosition, Quaternion.identity);
 		enemy.Target = _player;
+		enemy.spawnID = _spawnID;
 		_enemies.Add(enemy);
 		_currentEnemies++;
-		
+
+		foreach (var item in _enemies)
+		{
+			item.Friends = _enemies;
+		}
+
 		if (_currentEnemies < _numberOfEnemies)
 		{
 			Invoke("SpawnEnemy", _spawnTime);
 		}
-
-		if (_currentEnemies >= _numberOfEnemies)
-		{
-            foreach (var item in _enemies)
-            {
-				item.Friends = _enemies;
-
-			}
-		}
 	}
 
-	public void StartSpawn()
+	public void StartSpawn() 
 	{
 		onStartSpawn?.Invoke();
 	}
