@@ -1111,7 +1111,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 363562710}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: CloseSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
