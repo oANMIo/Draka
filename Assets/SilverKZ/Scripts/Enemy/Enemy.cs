@@ -1,11 +1,10 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : ItemDamage
 {
     [SerializeField] private int _health = 100;
+    [SerializeField] private int _damage = 10;
 
     [Header("AI Movement")]
     [SerializeField] private float _attackRange = 2.0f;
@@ -14,6 +13,10 @@ public class Enemy : ItemDamage
     [SerializeField] private float _maxForce = 5f;
     [SerializeField] private float _slowingRadius = 2f;
     [SerializeField] private float _attackCooldown = 1.5f;
+
+    [SerializeField] private Transform _attackPoint;
+    [SerializeField] private Vector2 _boxSize = new Vector2(2.3f, 0.6f);
+    [SerializeField] private LayerMask _whatIsPlayer;
 
     [Header("FX Damage")]
     [SerializeField] private float _knockbackForce = 50f;
@@ -187,10 +190,17 @@ public class Enemy : ItemDamage
             return;
 
         _lastAttackTime = Time.time;
-        Debug.Log($"{gameObject.name} attack!");
+        _animator.SetTrigger("Attack");
+    }
 
-        // animator.SetTrigger("Attack");
-        // player.GetComponent<PlayerHealth>().TakeDamage(damage);
+    public void Attack()
+    {
+        Collider2D player = Physics2D.OverlapBox(_attackPoint.position, _boxSize, 0, _whatIsPlayer);
+
+        if (player != null)
+        {
+            player.gameObject.GetComponent<Player>().TakeDamage(_damage);
+        }
     }
 
     private IEnumerator DoKnockback(Vector2 direction)
@@ -208,5 +218,14 @@ public class Enemy : ItemDamage
 
         _rb.linearVelocity = Vector2.zero;
         _isKnockedBack = false;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (_attackPoint == null)
+            return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(_attackPoint.position, _boxSize);
     }
 }

@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 6236274112081876240}
   - component: {fileID: 4163023384659636308}
   - component: {fileID: 883035442841322642}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ MonoBehaviour:
   _attackPoint: {fileID: 5236288984339040979}
   _enemyLayer:
     serializedVersion: 2
-    m_Bits: 320
+    m_Bits: 832
   _boxSize: {x: 1, y: 0.6}
 --- !u!114 &883035442841322642
 MonoBehaviour:

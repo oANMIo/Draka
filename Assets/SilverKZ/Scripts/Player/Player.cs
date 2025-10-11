@@ -7,26 +7,16 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int _maxHealth = 100;
 
-    private int _coin = 0;
     private int _health;
     private Animator _animator;
 
-    public static Action<int> onAddCoin;
     public static Action<int> onAddHealth;
 
     private void Start()
     {
         _health = _maxHealth;
         onAddHealth?.Invoke(_health);
-        onAddCoin?.Invoke(_coin);
         _animator = GetComponent<Animator>();
-    }
-
-    public void AddCoin(int amount)
-    {
-        _coin += amount;
-        onAddCoin?.Invoke(_coin);
-        AudioManager.Instance.Play(AudioManager.Clip.CoinPickup);
     }
 
     public void AddHealth(int amount)
@@ -45,6 +35,7 @@ public class Player : MonoBehaviour
         onAddHealth?.Invoke(_health);
 
         _animator.SetBool("Damage", true);
+
         StopAllCoroutines();
         StartCoroutine(Delay());
 

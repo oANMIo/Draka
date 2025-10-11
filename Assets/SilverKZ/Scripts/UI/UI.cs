@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,12 @@ public class UI : MonoBehaviour
     [SerializeField] private Image _imageKnife;
     [SerializeField] private TMPro.TextMeshProUGUI _textKnife;
     [SerializeField] private Image _arrow;
+    [SerializeField] private Slider _slider;
+    [SerializeField] private float _smoothSpeed = 5f;
+
+    private float _targetValue;
+    private float _maxValue;
+    private Coroutine _showHealthRoutine;
 
     private void OnEnable()
     {
@@ -21,7 +28,7 @@ public class UI : MonoBehaviour
     }
 
     private void OnDisable()
-    {
+    { 
         PlayerThrowableAttack.onAddBottle -= SetAmmountBottle;
         PlayerThrowableAttack.onAddKnife -= SetAmmountKnife;
         PlayerThrowableAttack.onActiveWeapon -= SetActiveWeapon;
@@ -30,6 +37,18 @@ public class UI : MonoBehaviour
         EnemySpawn.onAllKill -= ShowArrow;
     }
 
+    private void Start()
+    {
+        _maxValue = 100f;
+        _slider.maxValue = _maxValue;
+        _slider.value = _maxValue;
+    }
+    /*
+    private void Update()
+    {
+        _slider.value = Mathf.Lerp(_slider.value, _targetValue, Time.deltaTime * _smoothSpeed);
+    }
+    */
     private void SetAmmountBottle(int amount)
     {
         _textBottle.text = amount.ToString();
@@ -62,6 +81,11 @@ public class UI : MonoBehaviour
 
     private void SetAmmountHealth(int amount)
     {
+        if (_showHealthRoutine != null)
+            StopCoroutine(_showHealthRoutine);
+
+        _showHealthRoutine = StartCoroutine(ShowHealth(amount));
+
         _textHealth.text = "HP " + amount.ToString();
     }
 
@@ -73,5 +97,16 @@ public class UI : MonoBehaviour
     private void HideArrow()
     {
         _arrow.enabled = false;
+    }
+
+    private IEnumerator ShowHealth(float targetHealth)
+    {
+        float recoveryRate = 20f;
+
+        while (_slider.value != targetHealth)
+        {
+            _slider.value = Mathf.MoveTowards(_slider.value, targetHealth, recoveryRate * Time.deltaTime);
+            yield return null;
+        }
     }
 }

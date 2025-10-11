@@ -5,9 +5,11 @@ public class Trash : ItemDamage
 {
     [SerializeField] private int _health = 100;
     [SerializeField] private GameObject _prefabSpawn;
+
     [Header("FX Damage")]
     [SerializeField] private float _knockbackForce = 50f;
     [SerializeField] private float _knockbackDuration = 0.03f;
+    [SerializeField] private GameObject _hitEffectPrefab;
 
     private bool _isKnockedBack = false;
     private Animator _animator;
@@ -27,6 +29,7 @@ public class Trash : ItemDamage
         AudioManager.Instance.Play(AudioManager.Clip.Trash);
         _health -= damage;
 
+        SpawnHitEffect(hitDirection);
         StartCoroutine(DoKnockback(hitDirection));
 
         if (_health <= 0)
@@ -58,5 +61,19 @@ public class Trash : ItemDamage
         yield return new WaitForSeconds(0.217f);
         Instantiate(_prefabSpawn, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    private void SpawnHitEffect(Vector2 hitDirection) 
+    {
+        if (_hitEffectPrefab == null) return;
+
+        Vector3 spawnOffset = new Vector3(0, 1f, 0);
+        Vector3 spawnPos = transform.position + spawnOffset + (Vector3)(-hitDirection.normalized * 0.5f);
+
+        GameObject effect = Instantiate(_hitEffectPrefab, spawnPos, Quaternion.identity);
+
+        // Разворачиваем в сторону удара (чтобы летели “в обратную”)
+        float angle = Mathf.Atan2(hitDirection.y, hitDirection.x) * Mathf.Rad2Deg;
+        effect.transform.rotation = Quaternion.Euler(0, 0, angle + 180f);
     }
 }

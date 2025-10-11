@@ -5,16 +5,23 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
 	[SerializeField] private int _spawnID = 1;
-	[SerializeField] private float _maxY = 1.0f;
+	[SerializeField] private float _maxY = -1.55f;
 	[SerializeField] private float _minY = -4.5f;
 	[SerializeField] private int _numberOfEnemies = 2;
 	[SerializeField] private float _spawnTime = 1.0f;
 	[SerializeField] private Enemy _prefabEnemy;
+
+	[Header("Spawn EnemyGuard")]
 	[SerializeField] private EnemyGuard _prefabEnemyGuard;
 	[SerializeField] private Transform _spawnPointEnemyGuard;
 
+	[Header("Spawn EnemyCop")]
+	[SerializeField] private EnemyCop _prefabEnemyCop;
+	[SerializeField] private Transform _spawnPointEnemyCop;
+
 	private int _currentEnemies;
 	private bool _spawnEnemyGuard;
+	private bool _spawnEnemyCop;
 	private Camera _camera;
 	private Player _player;
 	private List<ItemDamage> _enemies = new List<ItemDamage>();
@@ -27,6 +34,7 @@ public class EnemySpawn : MonoBehaviour
 		_camera = Camera.main;
 		_currentEnemies = 0;
 		_spawnEnemyGuard = false;
+		_spawnEnemyCop = false;
 	}
 
 	private void OnEnable()
@@ -89,26 +97,39 @@ public class EnemySpawn : MonoBehaviour
 			_currentEnemies++;
 			_spawnEnemyGuard = true;
 		}
-		
-		bool positionX = UnityEngine.Random.Range(0, 2) == 0 ? true : false;
-		//bool positionX = true;
-		Vector3 spawnPosition;
-		spawnPosition.y = UnityEngine.Random.Range(_minY, _maxY);
 
-		if (positionX)
+		if (_prefabEnemyCop != null && _spawnEnemyCop == false)
 		{
-			spawnPosition = new Vector3(transform.position.x + 17, spawnPosition.y, 0);
-		}
-		else
-		{
-			spawnPosition = new Vector3(transform.position.x - 17, spawnPosition.y, 0); 
+			EnemyCop enemyCop = Instantiate(_prefabEnemyCop, _spawnPointEnemyCop.position, Quaternion.identity);
+			enemyCop.Target = _player;
+			enemyCop.spawnID = _spawnID;
+			_enemies.Add(enemyCop);
+			_currentEnemies++;
+			_spawnEnemyCop = true;
 		}
 
-		Enemy enemy = Instantiate(_prefabEnemy, spawnPosition, Quaternion.identity);
-		enemy.Target = _player;
-		enemy.spawnID = _spawnID;
-		_enemies.Add(enemy);
-		_currentEnemies++;
+		if (_currentEnemies < _numberOfEnemies)
+		{
+			bool positionX = UnityEngine.Random.Range(0, 2) == 0 ? true : false;
+			//bool positionX = true;
+			Vector3 spawnPosition;
+			spawnPosition.y = UnityEngine.Random.Range(_minY, _maxY);
+
+			if (positionX)
+			{
+				spawnPosition = new Vector3(transform.position.x + 16, spawnPosition.y, 0);
+			}
+			else
+			{
+				spawnPosition = new Vector3(transform.position.x - 16, spawnPosition.y, 0);
+			}
+
+			Enemy enemy = Instantiate(_prefabEnemy, spawnPosition, Quaternion.identity);
+			enemy.Target = _player;
+			enemy.spawnID = _spawnID;
+			_enemies.Add(enemy);
+			_currentEnemies++;
+		}
 
 		foreach (var item in _enemies)
 		{

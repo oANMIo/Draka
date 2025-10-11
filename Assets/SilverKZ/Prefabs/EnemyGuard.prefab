@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnID: 0
-  _health: 50
+  _health: 75
   _activationDistance: 8
   _moveSpeed: 2
   _bulletPrefab: {fileID: 1663130162956795793, guid: d4343374eb7625f4b9436c2e89274928, type: 3}
