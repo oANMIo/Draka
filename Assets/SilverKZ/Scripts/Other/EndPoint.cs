@@ -7,7 +7,7 @@ public class EndPoint : MonoBehaviour
 {
     [SerializeField] private Image _fadeImage;
     [SerializeField] private float _fadeDuration = 1f;
-    [SerializeField] private int _indexNextScene;
+    //[SerializeField] private int _indexNextScene;
 
     private void Awake()
     {
@@ -38,6 +38,13 @@ public class EndPoint : MonoBehaviour
 
         c.a = 1;
         _fadeImage.color = c;
-        SceneManager.LoadScene(_indexNextScene);
+        int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if (nextScene == 6)
+        {
+            nextScene = 0;
+        }
+
+        SceneManager.LoadScene(nextScene);
     }
 }
