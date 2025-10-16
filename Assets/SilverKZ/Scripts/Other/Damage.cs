@@ -4,17 +4,22 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [SerializeField] private int _damage = 5;
-    [SerializeField] private float _startTime = 0.8f;
+    [SerializeField] private float _StartTime = 0.8f;
 
-    private bool _isDamage;
+    private bool _isPlayerDamage;
+    private bool _isEnemyDamage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out Player player))
         {
-            _isDamage = true;
-            StopAllCoroutines();
-            StartCoroutine(TakeDamage(player));
+            _isPlayerDamage = true;
+            StartCoroutine(PlayerTakeDamage(player));
+        }
+        else if (collision.TryGetComponent(out ItemDamage enemy) && collision.gameObject.tag != "Box")
+        {
+            _isEnemyDamage = true;
+            StartCoroutine(EnemyTakeDamage(enemy));
         }
     }
 
@@ -22,17 +27,31 @@ public class Damage : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            _isDamage = false;
+            _isPlayerDamage = false;
+        }
+        else if (collision.TryGetComponent(out ItemDamage enemy))
+        {
+            _isEnemyDamage = false;
         }
     }
 
-    private IEnumerator TakeDamage(Player player)
+    private IEnumerator PlayerTakeDamage(Player player)
     {
-        while (_isDamage)
+        while (_isPlayerDamage)
         {
             yield return null;
             player.TakeDamage(_damage);
-            yield return new WaitForSeconds(_startTime);
+            yield return new WaitForSeconds(_StartTime);
+        }
+    }
+
+    private IEnumerator EnemyTakeDamage(ItemDamage enemy)
+    {
+        while (_isEnemyDamage)
+        {
+            yield return null;
+            enemy.TakeDamage(_damage, Vector2.zero);
+            yield return new WaitForSeconds(_StartTime);
         }
     }
 }

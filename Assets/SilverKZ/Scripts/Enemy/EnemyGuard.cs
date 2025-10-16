@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,52 +13,58 @@ public class EnemyGuard : ItemDamage
     [Header("Throw")]
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _throwPoint;        // точка броска
-    [SerializeField] private float _yTolerance = 0.3f;     // допустимая разница по Y
+    [SerializeField] private float _xTolerance = 0.3f;     // допустимая разница по Y
     [SerializeField] private float _throwCooldown = 2f;    // перезарядка броска
     [SerializeField] private float _throwHeight = 3f;      // высота дуги
     [SerializeField] private float _throwDuration = 1f;    // время полета
 
     [Header("FX Damage")]
     [SerializeField] private GameObject _hitEffectPrefab;
+    [SerializeField] private float _knockbackForce = 50f;
+    [SerializeField] private float _knockbackDuration = 0.03f;
 
+    private bool _isKnockedBack = false;
     private float _throwTimer = 0f;
     private Animator _animator;
     private BoxCollider2D _collider;
+    private Rigidbody2D _rb;
     private float _speed = 0f;
     private bool _isDamage = false;
     private bool _isAlive = true;
-
-    public Player Player { get; set; }
+    private bool _isLeftMove = true;
+    private Vector2 _velocity;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _collider = GetComponent<BoxCollider2D>();
+        _rb = GetComponent<Rigidbody2D>();
+        _speed = 0f;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (_isAlive == false || Player == null) return;
+        if (_isAlive == false || Player == null || _isKnockedBack) return;
 
         float dist = Vector2.Distance(transform.position, Player.transform.position);
-        _speed = 0f;
 
-        // 1. Активация
-        if (dist < _activationDistance && dist > 2f)
+        _velocity = Vector2.zero;
+        _velocity = Vector2.ClampMagnitude(_velocity, _speed);
+        _rb.MovePosition(_rb.position + _velocity * Time.fixedDeltaTime);
+
+        if (dist < _activationDistance && dist > 1.5f)
         {
-            // 2. Двигаемся по Y
-            Vector2 pos = transform.position;
-            pos.y = Mathf.MoveTowards(pos.y, Player.transform.position.y, _moveSpeed * Time.deltaTime);
-            _speed = (pos - (Vector2)transform.position).magnitude;
-            transform.position = pos;
-
             Flip();
 
-            // 3. Проверяем, выровнялись ли с игроком
-            if (Mathf.Abs(transform.position.y - Player.transform.position.y) < _yTolerance)
+            if (Mathf.Abs(transform.position.x - Player.transform.position.x) < _xTolerance && _speed != 1f)
             {
-                // 4. Таймер броска
+                _speed = 1f;
+                StartCoroutine(Move());
+            }
+            else if (_speed != 1f)
+            {
                 _throwTimer -= Time.deltaTime;
+                
 
                 if (_throwTimer <= 0f)
                 {
@@ -78,15 +85,24 @@ public class EnemyGuard : ItemDamage
 
     public override void TakeDamage(int damage, Vector2 hitDirection)
     {
-        AudioManager.Instance.Play(AudioManager.Clip.Hit);
-        _health -= damage;
-        _isDamage = true;
+        if (_isKnockedBack) return;
 
-        SpawnHitEffect(hitDirection);
+        _health -= damage;
+
+        if (hitDirection != Vector2.zero)
+        {
+            AudioManager.Instance.Play(AudioManager.Clip.Hit);
+            SpawnHitEffect(hitDirection);
+            StartCoroutine(DoKnockback(hitDirection));
+        }
 
         if (_health <= 0)
         {
             Die();
+        }
+        else
+        {
+            _isDamage = true;
         }
     }
 
@@ -130,5 +146,38 @@ public class EnemyGuard : ItemDamage
         // Разворачиваем в сторону удара (чтобы летели “в обратную”)
         float angle = Mathf.Atan2(hitDirection.y, hitDirection.x) * Mathf.Rad2Deg;
         effect.transform.rotation = Quaternion.Euler(0, 0, angle + 180f);
+    }
+
+    private IEnumerator Move()
+    {
+        Vector2 targetPos = transform.position;
+        targetPos.x += (_isLeftMove) ? -3f : 3f;
+
+        while (Vector2.Distance(transform.position, targetPos) > 0.1f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, _moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        _isLeftMove = !_isLeftMove;
+        _speed = 0f;
+        yield return null;
+    }
+
+    private IEnumerator DoKnockback(Vector2 direction)
+    {
+        if (_isKnockedBack || _rb == null) yield break;
+
+        _isKnockedBack = true;
+
+        _rb.WakeUp();
+        _rb.linearVelocity = Vector2.zero;
+        Vector2 knockbackDir = new Vector2(Mathf.Sign(direction.x), 0f);
+        _rb.AddForce(knockbackDir * _knockbackForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(_knockbackDuration);
+
+        _rb.linearVelocity = Vector2.zero;
+        _isKnockedBack = false;
     }
 }

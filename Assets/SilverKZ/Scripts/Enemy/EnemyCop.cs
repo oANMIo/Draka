@@ -36,7 +36,7 @@ public class EnemyCop : ItemDamage
     private bool _targetInChaseRange = false;
 
     public bool IsChase { get;  set; }
-    public Player Target { get;  set; }
+    //public Player Target { get;  set; }
 
     private void Start()
     {
@@ -79,18 +79,23 @@ public class EnemyCop : ItemDamage
     {
         if (_isKnockedBack) return;
 
-        AudioManager.Instance.Play(AudioManager.Clip.Hit);
         _health -= damage;
-        _isDamage = true;
 
-        SpawnHitEffect(hitDirection);
+        if (hitDirection != Vector2.zero)
+        {
+            AudioManager.Instance.Play(AudioManager.Clip.Hit);
+            SpawnHitEffect(hitDirection);
+            StartCoroutine(DoKnockback(hitDirection));
+        }
 
-        StartCoroutine(DoKnockback(hitDirection));
-
-        if (_health <= 0) 
+        if (_health <= 0)
         {
             Die();
-        } 
+        }
+        else
+        {
+            _isDamage = true;
+        }
     }
 
     private void Die()
@@ -118,18 +123,18 @@ public class EnemyCop : ItemDamage
 
     private void Flip()
     {
-        if (Target == null) return;
+        if (Player == null) return;
         
-        transform.localScale = new Vector3(Mathf.Sign(transform.position.x - Target.transform.position.x), 1, 1);
+        transform.localScale = new Vector3(Mathf.Sign(transform.position.x - Player.transform.position.x), 1, 1);
     }
 
     private void Move() 
     {
-        if (Target == null) return;
+        if (Player == null) return;
 
-        float dist = Vector2.Distance(transform.position, Target.transform.position);
+        float dist = Vector2.Distance(transform.position, Player.transform.position);
 
-        Vector2 target = (Vector2)Target.transform.position + LateralOffset(); // flang
+        Vector2 target = (Vector2)Player.transform.position + LateralOffset(); // flang
         Vector2 arrive = Arrive(target);
         Vector2 sep = Separation();
         _velocity += (arrive + sep) * Time.deltaTime;
@@ -147,7 +152,7 @@ public class EnemyCop : ItemDamage
 
     private Vector2 LateralOffset()
     {
-        Vector2 dir = (transform.position - Target.transform.position).normalized;
+        Vector2 dir = (transform.position - Player.transform.position).normalized;
         Vector2 right = Vector3.Cross(Vector2.up, dir);
         float offset = UnityEngine.Random.Range(-1f, 1f) * 1.5f;
         return right * offset;
@@ -197,10 +202,9 @@ public class EnemyCop : ItemDamage
 
     private void TryAttack()
     {
-        if (Time.time - _lastAttackTime < _attackCooldown) 
+        if (Time.time - _lastAttackTime < _attackCooldown && _isAlive) 
             return;
 
-        _lastAttackTime = Time.time;
         _lastAttackTime = Time.time;
         _animator.SetTrigger("Attack");
     }

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ParabolicThrow : MonoBehaviour
 {
+    [SerializeField] private float _rotationSpeed = 500f;
+
     private Vector2 _startPos;
     private Vector2 _targetPos;
     private float _duration;
@@ -11,7 +13,7 @@ public class ParabolicThrow : MonoBehaviour
     public void StartThrow(Vector2 start, Transform target, float dur, float h)
     {
         _startPos = start;
-        _targetPos = target.position; // фиксируем позицию игрока в момент броска
+        _targetPos = target.position;
         _duration = dur;
         _height = h;
         _time = 0;
@@ -33,5 +35,6 @@ public class ParabolicThrow : MonoBehaviour
         float parabola = 4 * _height * _time * (1 - _time);
 
         transform.position = new Vector2(linearPos.x, linearPos.y + parabola);
-    }
+        transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime); 
+    } 
 }

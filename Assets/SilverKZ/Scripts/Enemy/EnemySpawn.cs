@@ -9,32 +9,23 @@ public class EnemySpawn : MonoBehaviour
 	[SerializeField] private float _minY = -4.5f;
 	[SerializeField] private int _numberOfEnemies = 2;
 	[SerializeField] private float _spawnTime = 1.0f;
-	[SerializeField] private Enemy _prefabEnemy;
+	[SerializeField] private GameObject _prefabEnemy;
 
-	[Header("Spawn EnemyGuard")]
-	[SerializeField] private EnemyGuard _prefabEnemyGuard;
-	[SerializeField] private Transform _spawnPointEnemyGuard;
-
-	[Header("Spawn EnemyCop")]
-	[SerializeField] private EnemyCop _prefabEnemyCop;
-	[SerializeField] private Transform _spawnPointEnemyCop;
-
+	private int _count;
 	private int _currentEnemies;
-	private bool _spawnEnemyGuard;
-	private bool _spawnEnemyCop;
 	private Camera _camera;
 	private Player _player;
-	private List<ItemDamage> _enemies = new List<ItemDamage>();
+	private List<GameObject> _enemies = new List<GameObject>();
 
 	public static Action onStartSpawn;
 	public static Action onAllKill;
+	public static Action<int> onEnemyCount;
 
 	private void Awake()
     {
 		_camera = Camera.main;
 		_currentEnemies = 0;
-		_spawnEnemyGuard = false;
-		_spawnEnemyCop = false;
+		_count = 0;
 	}
 
 	private void OnEnable()
@@ -45,6 +36,16 @@ public class EnemySpawn : MonoBehaviour
 	private void OnDisable()
 	{
 		ItemDamage.onDeathEnemy -= UpdateCountEnemy;
+	}
+
+	public void StartSpawn()
+	{
+		onStartSpawn?.Invoke();
+	}
+
+	public void AllKill()
+	{
+		onAllKill?.Invoke();
 	}
 
 	private void UpdateCountEnemy(ItemDamage enemy)
@@ -64,7 +65,9 @@ public class EnemySpawn : MonoBehaviour
 
 		if (countAliveEnemies > 0)  
 		{
-			enemy.gameObject.tag = "Untagged";  
+			enemy.gameObject.tag = "Untagged";
+			_count--;
+			onEnemyCount?.Invoke(_count); 
 		}
 		
 		if (countAliveEnemies == 0 && _currentEnemies >= _numberOfEnemies)
@@ -82,73 +85,62 @@ public class EnemySpawn : MonoBehaviour
 			_player = player;
 			GetComponent<BoxCollider2D>().enabled = false;
 			_camera.GetComponent<CameraFollow>().maxXAndY.x = transform.position.x + 8.9f;
+			_currentEnemies = 0;
+			_count = _numberOfEnemies;
+			onEnemyCount?.Invoke(_count);
+			CountEnemiesOnScreen();
 			SpawnEnemy();
 		}
 	}
-	
+
+	private void CountEnemiesOnScreen()
+    {
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+		foreach (GameObject enemy in enemies)
+		{
+			if (enemy.GetComponent<ItemDamage>().spawnID == _spawnID)
+			{
+				_enemies.Add(enemy);
+				enemy.GetComponent<ItemDamage>().Player = _player;
+				_currentEnemies++;
+			}
+		}
+	}
+
 	private void SpawnEnemy()
 	{
-        if (_prefabEnemyGuard != null && _spawnEnemyGuard == false)
-        {
-			EnemyGuard enemyGuard = Instantiate(_prefabEnemyGuard, _spawnPointEnemyGuard.position, Quaternion.identity);
-			enemyGuard.Player = _player;
-			enemyGuard.spawnID = _spawnID;
-			_enemies.Add(enemyGuard);
-			_currentEnemies++;
-			_spawnEnemyGuard = true;
-		}
-
-		if (_prefabEnemyCop != null && _spawnEnemyCop == false)
-		{
-			EnemyCop enemyCop = Instantiate(_prefabEnemyCop, _spawnPointEnemyCop.position, Quaternion.identity);
-			enemyCop.Target = _player;
-			enemyCop.spawnID = _spawnID;
-			_enemies.Add(enemyCop);
-			_currentEnemies++;
-			_spawnEnemyCop = true;
-		}
-
 		if (_currentEnemies < _numberOfEnemies)
 		{
-			bool positionX = UnityEngine.Random.Range(0, 2) == 0 ? true : false;
-			//bool positionX = true;
+			//bool positionX = UnityEngine.Random.Range(0, 2) == 0 ? true : false;
+			bool positionX = true;
 			Vector3 spawnPosition;
 			spawnPosition.y = UnityEngine.Random.Range(_minY, _maxY);
 
 			if (positionX)
 			{
-				spawnPosition = new Vector3(transform.position.x + 16, spawnPosition.y, 0);
+				spawnPosition = new Vector3(transform.position.x + 18, spawnPosition.y, 0);
 			}
 			else
 			{
 				spawnPosition = new Vector3(transform.position.x - 16, spawnPosition.y, 0);
 			}
 
-			Enemy enemy = Instantiate(_prefabEnemy, spawnPosition, Quaternion.identity);
-			enemy.Target = _player;
-			enemy.spawnID = _spawnID;
+			GameObject enemy = Instantiate(_prefabEnemy, spawnPosition, Quaternion.identity);
+			enemy.GetComponent<ItemDamage>().Player = _player;
+			enemy.GetComponent<ItemDamage>().spawnID = _spawnID;
 			_enemies.Add(enemy);
 			_currentEnemies++;
 		}
 
 		foreach (var item in _enemies)
 		{
-			item.Friends = _enemies;
+			item.GetComponent<ItemDamage>().Friends = _enemies;
 		}
 
 		if (_currentEnemies < _numberOfEnemies)
 		{
-			Invoke("SpawnEnemy", _spawnTime);
+			Invoke("SpawnEnemy", _spawnTime); 
 		}
-	}
-
-	public void StartSpawn() 
-	{
-		onStartSpawn?.Invoke();
-	}
-
-	public void AllKill()
-	{
-		onAllKill?.Invoke();
 	}
 }

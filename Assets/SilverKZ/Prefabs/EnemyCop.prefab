@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2781268404162332229}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.744, y: 0.127, z: 0}
+  m_LocalPosition: {x: -0.765, y: -0.015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -103,7 +103,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.07700348, y: 0.040986776}
+  m_Offset: {x: 0.13767242, y: 0.040986776}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -113,7 +113,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8891449, y: 0.3310008}
+  m_Size: {x: 0.83522034, y: 0.3310008}
   m_EdgeRadius: 0
 --- !u!50 &5068170228619382480
 Rigidbody2D:
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnID: 0
   _health: 200
-  _speed: 2
+  _speed: 3.5
   _separationRadius: 2.5
   _maxForce: 5
   _slowingRadius: 2
@@ -241,12 +241,12 @@ MonoBehaviour:
   _whatIsPlayer:
     serializedVersion: 2
     m_Bits: 1024
-  _chaseRange: 5
-  _attackRange: 1
+  _chaseRange: 6
+  _attackRange: 1.5
   _attackPoint: {fileID: 7514771013442891772}
-  _boxSize: {x: 0.6, y: 0.6}
+  _boxSize: {x: 0.7, y: 0.8}
   _damage: 40
-  _knockbackForce: 50
+  _knockbackForce: 20
   _knockbackDuration: 0.03
   _hitEffectPrefab: {fileID: 7302835245389350882, guid: 09999a743a1a7354c94ac108712f4682, type: 3}
 --- !u!1 &4577065647381116436

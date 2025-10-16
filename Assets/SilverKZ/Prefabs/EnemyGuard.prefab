@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 564261922366871055}
   - component: {fileID: 4799641200054121891}
   - component: {fileID: 5202164109403045654}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: EnemyGuard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.006106138, y: 0.09141517}
+  m_Offset: {x: 0.0023972988, y: 0.09566665}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -81,7 +81,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1858811, y: 0.38892317}
+  m_Size: {x: 1.0569968, y: 0.49946737}
   m_EdgeRadius: 0
 --- !u!50 &6386389970184644749
 Rigidbody2D:
@@ -91,11 +91,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3809335337192049848}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 5
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -109,7 +109,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 6
 --- !u!95 &564261922366871055
 Animator:
   serializedVersion: 7
@@ -201,15 +201,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnID: 0
   _health: 75
-  _activationDistance: 8
-  _moveSpeed: 2
+  _activationDistance: 9
+  _moveSpeed: 2.3
   _bulletPrefab: {fileID: 1663130162956795793, guid: d4343374eb7625f4b9436c2e89274928, type: 3}
   _throwPoint: {fileID: 4462398209181990563}
-  _yTolerance: 0.4
-  _throwCooldown: 1
+  _xTolerance: 1.4
+  _throwCooldown: 0.7
   _throwHeight: 3
   _throwDuration: 1
   _hitEffectPrefab: {fileID: 7302835245389350882, guid: 09999a743a1a7354c94ac108712f4682, type: 3}
+  _knockbackForce: 100
+  _knockbackDuration: 0.03
 --- !u!1 &6937674880913477645
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4462398209181990563}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: ThrowPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

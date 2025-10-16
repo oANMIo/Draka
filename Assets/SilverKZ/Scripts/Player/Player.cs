@@ -34,19 +34,30 @@ public class Player : MonoBehaviour
         _health -= damage;
         onAddHealth?.Invoke(_health);
 
-        _animator.SetBool("Damage", true);
-
-        StopAllCoroutines();
-        StartCoroutine(Delay());
+        //StopAllCoroutines();
+        //StartCoroutine(Delay());
 
         if (_health <= 0)
         {
-            Die();
+            _animator.SetTrigger("Die");
+            StartCoroutine(Die());
+        }
+        else
+        {
+            _animator.SetBool("Damage", true);
+            StartCoroutine(Delay());
         }
     }
 
-    private void Die()
+    private IEnumerator Die()
     {
+        gameObject.GetComponent<PlayerAttack>().enabled = false;
+        gameObject.GetComponent<PlayerMovement>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //yield return new WaitForSeconds(1.017f);
+        //Time.timeScale = 0;
+        yield return new WaitForSeconds(4f);
+        ///Time.timeScale = 1;
         ReloadCurrentScene();
     }
 

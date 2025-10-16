@@ -30,10 +30,11 @@ public class Enemy : ItemDamage
     private Animator _animator;
     private bool _isDamage = false;
     private bool _isAlive = true;
+    private bool _isAttack = false;
     private float _lastAttackTime;
 
     public bool IsChase { get;  set; }
-    public Player Target { get;  set; }
+    //public Player Target { get;  set; }
     //public List<ItemDamage> Friends { private get; set; }
 
     private void Start()
@@ -49,13 +50,17 @@ public class Enemy : ItemDamage
 
     private void FixedUpdate()
     {
-        if (_isAlive == false || _isKnockedBack) return;
+        if (_isAlive == false) return;
+
+        _animator.SetBool("Damage", _isDamage);
+
+        if (_isKnockedBack) return;
 
         Flip();
         Move();
 
-        _animator.SetBool("Damage", _isDamage);
         _animator.SetFloat("Speed", _velocity.sqrMagnitude);
+        _animator.SetBool("Attack", _isAttack);
     }
 
     public void SetTriggerDamage() 
@@ -65,20 +70,28 @@ public class Enemy : ItemDamage
 
     public override void TakeDamage(int damage, Vector2 hitDirection)
     {
-        if (_isKnockedBack) return;
+        //if (_isKnockedBack) return;
 
-        AudioManager.Instance.Play(AudioManager.Clip.Hit);
-        _health -= damage;
-        _isDamage = true;
+        //_health -= damage;
 
-        SpawnHitEffect(hitDirection);
+        _isAttack = false;
 
-        StartCoroutine(DoKnockback(hitDirection));
+        if (hitDirection != Vector2.zero && _isKnockedBack == false)
+        {
+            _health -= damage;
+            AudioManager.Instance.Play(AudioManager.Clip.Hit);
+            SpawnHitEffect(hitDirection);
+            StartCoroutine(DoKnockback(hitDirection));
+        }
 
         if (_health <= 0) 
         {
             Die();
-        } 
+        }
+        else
+        {
+            _isDamage = true;
+        }
     }
 
     private void Die()
@@ -106,27 +119,35 @@ public class Enemy : ItemDamage
 
     private void Flip()
     {
-        if (Target == null) return;
+        if (Player == null) return;
         
-        transform.localScale = new Vector3(Mathf.Sign(transform.position.x - Target.transform.position.x), 1, 1);
+        transform.localScale = new Vector3(Mathf.Sign(transform.position.x - Player.transform.position.x), 1, 1);
     }
 
     private void Move() 
     {
-        if (Target == null) return;
+        if (Player == null) return;
 
-        float dist = Vector2.Distance(transform.position, Target.transform.position);
+        float dist = Vector2.Distance(transform.position, Player.transform.position);
 
-        Vector2 target = (Vector2)Target.transform.position + LateralOffset(); // flang
+        Vector2 target = (Vector2)Player.transform.position + LateralOffset(); // flang
         Vector2 arrive = Arrive(target);
         Vector2 sep = Separation();
         _velocity += (arrive + sep) * Time.deltaTime;
         //transform.position += _velocity * Time.deltaTime;
 
-        if (dist < _attackRange)
+        if (dist < _attackRange && _isKnockedBack == false)
         {
-            TryAttack();
+            if (Time.time - _lastAttackTime < _attackCooldown && _isAlive && _isAttack)
+                return;
+
+            _isAttack = true;
+            _lastAttackTime = Time.time;
             _velocity = Vector2.zero;
+        }
+        else
+        {
+            _isAttack = false;
         }
 
         _velocity = Vector2.ClampMagnitude(_velocity, _speed);
@@ -136,7 +157,7 @@ public class Enemy : ItemDamage
 
     private Vector2 LateralOffset()
     {
-        Vector2 dir = (transform.position - Target.transform.position).normalized;
+        Vector2 dir = (transform.position - Player.transform.position).normalized;
         Vector2 right = Vector3.Cross(Vector2.up, dir);
         float offset = UnityEngine.Random.Range(-1f, 1f) * 1.5f;
         return right * offset;
@@ -186,11 +207,11 @@ public class Enemy : ItemDamage
 
     private void TryAttack()
     {
-        if (Time.time - _lastAttackTime < _attackCooldown) 
+        if (Time.time - _lastAttackTime < _attackCooldown && _isAlive && _isAttack) 
             return;
 
         _lastAttackTime = Time.time;
-        _animator.SetTrigger("Attack");
+        //_animator.SetBool("Attack", _isAttack);
     }
 
     public void Attack()

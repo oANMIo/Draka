@@ -40,7 +40,7 @@ public class EndPoint : MonoBehaviour
         _fadeImage.color = c;
         int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
 
-        if (nextScene == 6)
+        if (nextScene == 7)
         {
             nextScene = 0;
         }

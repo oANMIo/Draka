@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7586472271729310552}
   - component: {fileID: 6316642790834021420}
   - component: {fileID: 1573543303686208725}
-  - component: {fileID: 2888869115595985613}
   m_Layer: 0
   m_Name: BottlePickup
   m_TagString: Untagged
@@ -124,7 +123,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.004843831}
+  m_Offset: {x: -0.0024023056, y: -0.00003916025}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -134,7 +133,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6818752, y: 1.234688}
+  m_Size: {x: 0.32152748, y: 0.92238724}
   m_EdgeRadius: 0
 --- !u!114 &1573543303686208725
 MonoBehaviour:
@@ -148,21 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d11b27944cf1c44be4042af5051a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2888869115595985613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5656107134397073248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1980ec80b0a75f44a5b22d2dd80c1dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponName: Bottle
-  _weaponType: 2
-  _stackable: 1
-  count: 1
-  _projectilePrefab: {fileID: 7374255845162159154, guid: 7df6da69a2ba0ba479c72dc3f152ddfe, type: 3}
-  _throwForce: 10
+  _weaponType: 0

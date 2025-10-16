@@ -23,6 +23,8 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/Main Menu.unity
   - m_enabled: 1
+    m_path: Assets/SilverKZ/Scenes/Level_0_Scene.unity
+  - m_enabled: 1
     m_path: Assets/SilverKZ/Scenes/Level_1_Scene.unity
   - m_enabled: 1
     m_path: Assets/SilverKZ/Scenes/Level_2_Scene.unity

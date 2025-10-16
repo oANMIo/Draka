@@ -4,16 +4,15 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
-    [SerializeField] private TMPro.TextMeshProUGUI _textHealth;
     [SerializeField] private Image _imageBottle;
     [SerializeField] private TMPro.TextMeshProUGUI _textBottle;
     [SerializeField] private Image _imageKnife;
     [SerializeField] private TMPro.TextMeshProUGUI _textKnife;
+    [SerializeField] private TMPro.TextMeshProUGUI _textEnemyCount;
     [SerializeField] private Image _arrow;
     [SerializeField] private Slider _slider;
-    [SerializeField] private float _smoothSpeed = 5f;
+    [SerializeField] private Image _death;
 
-    private float _targetValue;
     private float _maxValue;
     private Coroutine _showHealthRoutine;
 
@@ -25,6 +24,7 @@ public class UI : MonoBehaviour
         Player.onAddHealth += SetAmmountHealth;
         EnemySpawn.onStartSpawn += HideArrow;
         EnemySpawn.onAllKill += ShowArrow;
+        EnemySpawn.onEnemyCount += EnemyCount;
     }
 
     private void OnDisable()
@@ -35,6 +35,7 @@ public class UI : MonoBehaviour
         Player.onAddHealth -= SetAmmountHealth;
         EnemySpawn.onStartSpawn -= HideArrow;
         EnemySpawn.onAllKill -= ShowArrow;
+        EnemySpawn.onEnemyCount -= EnemyCount;
     }
 
     private void Start()
@@ -42,13 +43,9 @@ public class UI : MonoBehaviour
         _maxValue = 100f;
         _slider.maxValue = _maxValue;
         _slider.value = _maxValue;
+        _textEnemyCount.enabled = false;
     }
-    /*
-    private void Update()
-    {
-        _slider.value = Mathf.Lerp(_slider.value, _targetValue, Time.deltaTime * _smoothSpeed);
-    }
-    */
+
     private void SetAmmountBottle(int amount)
     {
         _textBottle.text = amount.ToString();
@@ -86,17 +83,33 @@ public class UI : MonoBehaviour
 
         _showHealthRoutine = StartCoroutine(ShowHealth(amount));
 
-        _textHealth.text = "HP " + amount.ToString();
+        if (amount <=0)
+        {
+            StartCoroutine(Die());
+        }
     }
 
     private void ShowArrow()
     {
         _arrow.enabled = true;
+        _textEnemyCount.enabled = false;
     }
 
     private void HideArrow()
     {
         _arrow.enabled = false;
+        _textEnemyCount.enabled = true;
+    }
+
+    private void EnemyCount(int amount)
+    {
+        _textEnemyCount.text = "Врагов: " + amount.ToString();
+    }
+
+    private IEnumerator Die()
+    {
+        yield return new WaitForSeconds(1.017f);
+        _death.gameObject.SetActive(true);
     }
 
     private IEnumerator ShowHealth(float targetHealth)

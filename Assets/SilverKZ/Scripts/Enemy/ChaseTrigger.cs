@@ -9,7 +9,7 @@ public class ChaseTrigger : MonoBehaviour
         if (collision.TryGetComponent(out Player player))
         {
             _enemy.IsChase = true;
-            _enemy.Target = player;
+            _enemy.Player = player;
             Destroy(gameObject);
         }
     }

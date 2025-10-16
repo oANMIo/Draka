@@ -6,13 +6,14 @@ public class ItemDamage : MonoBehaviour
 {
     public int spawnID;
 
-    public List<ItemDamage> Friends { get; set; }
+    public List<GameObject> Friends { get; set; }
+    public Player Player { get; set; }
 
     public static Action<ItemDamage> onDeathEnemy;
 
     private void Start()
     {
-        Friends = new List<ItemDamage>();
+        Friends = new List<GameObject>();
     }
 
     public void DeathEnemy()
