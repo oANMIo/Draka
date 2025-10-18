@@ -30,6 +30,7 @@ public class PauseMenu : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
@@ -114,7 +115,8 @@ public class PauseMenu : MonoBehaviour
     {
         PlayClickSound();
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Main Menu");
+        Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
+        SceneManager.LoadScene(0);
     }
 
     void PlayClickSound()

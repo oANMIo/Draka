@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private int _health;
     private Animator _animator;
 
+    public int Health { get { return _health; } }
+
     public static Action<int> onAddHealth;
 
     private void Start()

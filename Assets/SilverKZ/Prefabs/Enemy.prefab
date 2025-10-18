@@ -96,9 +96,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 100
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -214,8 +214,8 @@ MonoBehaviour:
   _whatIsPlayer:
     serializedVersion: 2
     m_Bits: 1024
-  _knockbackForce: 40
-  _knockbackDuration: 0.03
+  _knockbackForce: 600
+  _knockbackDuration: 0.3
   _hitEffectPrefab: {fileID: 7302835245389350882, guid: 09999a743a1a7354c94ac108712f4682, type: 3}
 --- !u!1 &4577065647381116436
 GameObject:

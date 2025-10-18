@@ -8,7 +8,7 @@ public class StartPoint : MonoBehaviour
 {
     [SerializeField] private Image _fadeImage;
     [SerializeField] private float _fadeDuration = 1f;
-    [SerializeField] private Button _button;
+    [SerializeField] private TMPro.TextMeshProUGUI _textPress;
     [SerializeField] private TMPro.TextMeshProUGUI _textLevel;
     [SerializeField] private TMPro.TextMeshProUGUI _textTitle;
     [SerializeField] private string[] _title;
@@ -33,12 +33,15 @@ public class StartPoint : MonoBehaviour
         _player.gameObject.GetComponent<PlayerMovement>().enabled = false;
     }
 
-    public void OnButtonClick()
+    private void Update()
     {
-        _textLevel.enabled = false;
-        _textTitle.enabled = false;
-        _button.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
-        StartCoroutine(FadeIn());
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _textLevel.enabled = false;
+            _textTitle.enabled = false;
+            _textPress.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
+            StartCoroutine(FadeIn());
+        }
     }
 
     private IEnumerator FadeIn()

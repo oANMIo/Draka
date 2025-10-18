@@ -51,7 +51,11 @@ public class EnemyCop : ItemDamage
 
     private void FixedUpdate()
     {
-        if (_isAlive == false || _isKnockedBack) return;
+        if (_isAlive == false) return;
+
+        _animator.SetBool("Damage", _isDamage);
+
+        if (_isKnockedBack) return;
 
         _targetInChaseRange = Physics2D.OverlapCircle(transform.position, _chaseRange, _whatIsPlayer);
        
@@ -77,12 +81,9 @@ public class EnemyCop : ItemDamage
 
     public override void TakeDamage(int damage, Vector2 hitDirection)
     {
-        if (_isKnockedBack) return;
-
-        _health -= damage;
-
-        if (hitDirection != Vector2.zero)
+        if (hitDirection != Vector2.zero && _isKnockedBack == false)
         {
+            _health -= damage;
             AudioManager.Instance.Play(AudioManager.Clip.Hit);
             SpawnHitEffect(hitDirection);
             StartCoroutine(DoKnockback(hitDirection));

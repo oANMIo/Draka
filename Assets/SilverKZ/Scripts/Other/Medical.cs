@@ -8,8 +8,11 @@ public class Medical : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            player.AddHealth(_health);
-            Destroy(gameObject);
+            if (player.Health < 100)
+            {
+                player.AddHealth(_health);
+                Destroy(gameObject);
+            }
         }
     }
 }

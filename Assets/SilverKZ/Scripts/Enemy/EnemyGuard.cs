@@ -44,7 +44,11 @@ public class EnemyGuard : ItemDamage
 
     private void FixedUpdate()
     {
-        if (_isAlive == false || Player == null || _isKnockedBack) return;
+        if (_isAlive == false) return;
+
+        _animator.SetBool("Damage", _isDamage);
+
+        if (Player == null || _isKnockedBack) return;
 
         float dist = Vector2.Distance(transform.position, Player.transform.position);
 
@@ -85,6 +89,15 @@ public class EnemyGuard : ItemDamage
 
     public override void TakeDamage(int damage, Vector2 hitDirection)
     {
+        if (hitDirection != Vector2.zero && _isKnockedBack == false)
+        {
+            _health -= damage;
+            AudioManager.Instance.Play(AudioManager.Clip.Hit);
+            SpawnHitEffect(hitDirection);
+            StartCoroutine(DoKnockback(hitDirection));
+        }
+
+        /*
         if (_isKnockedBack) return;
 
         _health -= damage;
@@ -95,6 +108,7 @@ public class EnemyGuard : ItemDamage
             SpawnHitEffect(hitDirection);
             StartCoroutine(DoKnockback(hitDirection));
         }
+        */
 
         if (_health <= 0)
         {

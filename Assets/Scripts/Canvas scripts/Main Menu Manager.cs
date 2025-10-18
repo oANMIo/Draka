@@ -34,6 +34,8 @@ public class MainMenuManager : MonoBehaviour
         }
         audioSource.playOnAwake = false;
         audioSource.volume = volume;
+        Cursor.lockState = CursorLockMode.None; 
+        Cursor.visible = true;
     }
 
     public void OnPointerClick(PointerEventData eventData)
