@@ -84,7 +84,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnGUI()
     {
-        if (!enabled) return;
+        if (!enabled || isAuthorsVisible || isSettingsVisible) return; 
 
         Event e = Event.current;
         if (e.isKey && e.keyCode == KeyCode.Escape && e.type == EventType.KeyUp)
@@ -99,6 +99,7 @@ public class PauseMenu : MonoBehaviour
         PlayClickSound();
         PauseGameMenu.SetActive(false);
         Time.timeScale = 1f;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
         PauseGame = false;
         Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
     }
@@ -108,6 +109,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
         PauseGameMenu.SetActive(true);
         Time.timeScale = 0f;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
         PauseGame = true;
     }
 

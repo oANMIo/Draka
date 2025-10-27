@@ -72,13 +72,13 @@ public class Enemy : ItemDamage
     {
         //if (_isKnockedBack) return;
 
-        //_health -= damage;
+        _health -= damage;
 
         _isAttack = false;
 
         if (hitDirection != Vector2.zero && _isKnockedBack == false)
         {
-            _health -= damage;
+            //_health -= damage;
             AudioManager.Instance.Play(AudioManager.Clip.Hit);
             SpawnHitEffect(hitDirection);
             StartCoroutine(DoKnockback(hitDirection));
@@ -100,6 +100,7 @@ public class Enemy : ItemDamage
         _isAlive = false;
         _collider.enabled = false;
         _animator.SetBool("Die", true);
+        StartCoroutine(Sleep());
         DeathEnemy(); 
     }
 
@@ -112,7 +113,7 @@ public class Enemy : ItemDamage
 
         GameObject effect = Instantiate(_hitEffectPrefab, spawnPos, Quaternion.identity);
 
-        // Разворачиваем в сторону удара (чтобы летели “в обратную”)
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
         float angle = Mathf.Atan2(hitDirection.y, hitDirection.x) * Mathf.Rad2Deg;
         effect.transform.rotation = Quaternion.Euler(0, 0, angle + 180f);
     }
@@ -241,7 +242,13 @@ public class Enemy : ItemDamage
         _isKnockedBack = false;
     }
 
-    private void OnDrawGizmosSelected()
+    private IEnumerator Sleep()
+    {
+        yield return new WaitForSeconds(_knockbackDuration);
+        _rb.Sleep();
+    }
+
+        private void OnDrawGizmosSelected()
     {
         if (_attackPoint == null)
             return;
